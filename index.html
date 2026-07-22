@@ -62,35 +62,160 @@
           <a class="btn btn-primary" href="#impact">認識 WaCare</a>
         </div>
 
-        <div class="ecosystem reveal" aria-label="WaCare 數位共生生態系">
-          <svg class="eco-lines" viewBox="0 0 500 500" aria-hidden="true">
-            <line x1="250" y1="250" x2="250" y2="44"/>
-            <line x1="250" y1="250" x2="420" y2="96"/>
-            <line x1="250" y1="250" x2="485" y2="238"/>
-            <line x1="250" y1="250" x2="420" y2="410"/>
-            <line x1="250" y1="250" x2="250" y2="485"/>
-            <line x1="250" y1="250" x2="72" y2="405"/>
-            <line x1="250" y1="250" x2="26" y2="225"/>
-            <line x1="250" y1="250" x2="82" y2="88"/>
-          </svg>
+       <div class="network-animation">
 
-          <div class="eco-core">
-            <div>
-              <strong>WaCare</strong>
-              <small>數位共生</small>
-            </div>
-          </div>
+  <!-- 節點之間的連線 -->
+  <svg
+    class="network-lines"
+    viewBox="0 0 600 600"
+    aria-hidden="true">
 
-          <div class="eco-node n1">長者</div>
-          <div class="eco-node n2">照顧者・家屬</div>
-          <div class="eco-node n3">偏鄉社區</div>
-          <div class="eco-node n4">醫院・診所</div>
-          <div class="eco-node n5">醫師・護理師</div>
-          <div class="eco-node n6">營養・心理</div>
-          <div class="eco-node n7">社工・NGO</div>
-          <div class="eco-node n8">健康專家</div>
-        </div>
-      </div>
+    <!-- 灰色固定底線 -->
+    <g class="base-lines">
+      <line x1="285" y1="85"  x2="465" y2="125" />
+      <line x1="285" y1="85"  x2="165" y2="145" />
+      <line x1="285" y1="85"  x2="340" y2="245" />
+
+      <line x1="165" y1="145" x2="75"  y2="270" />
+      <line x1="165" y1="145" x2="340" y2="245" />
+      <line x1="165" y1="145" x2="225" y2="325" />
+
+      <line x1="465" y1="125" x2="530" y2="260" />
+      <line x1="465" y1="125" x2="340" y2="245" />
+      <line x1="465" y1="125" x2="445" y2="355" />
+
+      <line x1="75"  y1="270" x2="225" y2="325" />
+      <line x1="75"  y1="270" x2="120" y2="475" />
+
+      <line x1="340" y1="245" x2="225" y2="325" />
+      <line x1="340" y1="245" x2="445" y2="355" />
+      <line x1="340" y1="245" x2="315" y2="505" />
+
+      <line x1="530" y1="260" x2="445" y2="355" />
+      <line x1="530" y1="260" x2="492" y2="462" />
+
+      <line x1="225" y1="325" x2="120" y2="475" />
+      <line x1="225" y1="325" x2="315" y2="505" />
+
+      <line x1="445" y1="355" x2="315" y2="505" />
+      <line x1="445" y1="355" x2="492" y2="462" />
+
+      <line x1="120" y1="475" x2="315" y2="505" />
+      <line x1="315" y1="505" x2="492" y2="462" />
+    </g>
+
+    <!-- 黃色流動電流 -->
+    <g class="energy-lines">
+      <line x1="285" y1="85"  x2="465" y2="125" />
+      <line x1="285" y1="85"  x2="165" y2="145" />
+      <line x1="285" y1="85"  x2="340" y2="245" />
+
+      <line x1="165" y1="145" x2="75"  y2="270" />
+      <line x1="165" y1="145" x2="340" y2="245" />
+      <line x1="165" y1="145" x2="225" y2="325" />
+
+      <line x1="465" y1="125" x2="530" y2="260" />
+      <line x1="465" y1="125" x2="340" y2="245" />
+      <line x1="465" y1="125" x2="445" y2="355" />
+
+      <line x1="75"  y1="270" x2="225" y2="325" />
+      <line x1="75"  y1="270" x2="120" y2="475" />
+
+      <line x1="340" y1="245" x2="225" y2="325" />
+      <line x1="340" y1="245" x2="445" y2="355" />
+      <line x1="340" y1="245" x2="315" y2="505" />
+
+      <line x1="530" y1="260" x2="445" y2="355" />
+      <line x1="530" y1="260" x2="492" y2="462" />
+
+      <line x1="225" y1="325" x2="120" y2="475" />
+      <line x1="225" y1="325" x2="315" y2="505" />
+
+      <line x1="445" y1="355" x2="315" y2="505" />
+      <line x1="445" y1="355" x2="492" y2="462" />
+
+      <line x1="120" y1="475" x2="315" y2="505" />
+      <line x1="315" y1="505" x2="492" y2="462" />
+    </g>
+  </svg>
+
+  <!-- 1 衛生局 -->
+  <div class="network-node node-health-bureau">
+    <div class="node-logo">◡</div>
+    <div class="node-icon">🏢</div>
+    <span>衛生局</span>
+  </div>
+
+  <!-- 2 病人 -->
+  <div class="network-node node-patient">
+    <div class="node-logo">◡</div>
+    <div class="node-icon">👴</div>
+    <span>病人</span>
+  </div>
+
+  <!-- 3 個人 -->
+  <div class="network-node node-person">
+    <div class="node-logo">◡</div>
+    <div class="node-icon">👩</div>
+    <span>個人</span>
+  </div>
+
+  <!-- 4 醫院／醫學中心 -->
+  <div class="network-node node-hospital">
+    <div class="node-logo">◡</div>
+    <div class="node-icon">🏥</div>
+    <span>醫院／醫學中心</span>
+  </div>
+
+  <!-- 5 診所／藥局 -->
+  <div class="network-node node-clinic">
+    <div class="node-logo">◡</div>
+    <div class="node-icon">💊</div>
+    <span>診所／藥局</span>
+  </div>
+
+  <!-- 6 照顧者／家屬 -->
+  <div class="network-node node-caregiver">
+    <div class="node-logo">◡</div>
+    <div class="node-icon">👩‍🦳</div>
+    <span>照顧者／家屬</span>
+  </div>
+
+  <!-- 7 醫護人員 -->
+  <div class="network-node node-medical-staff">
+    <div class="node-logo">◡</div>
+    <div class="node-icon">👩‍⚕️</div>
+    <span>醫護人員</span>
+  </div>
+
+  <!-- 8 NGO／機構 -->
+  <div class="network-node node-ngo">
+    <div class="node-logo">◡</div>
+    <div class="node-icon">🏬</div>
+    <span>NGO／機構</span>
+  </div>
+
+  <!-- 9 鄰里據點 -->
+  <div class="network-node node-community">
+    <div class="node-logo">◡</div>
+    <div class="node-icon">🏫</div>
+    <span>鄰里據點</span>
+  </div>
+
+  <!-- 10 居家 -->
+  <div class="network-node node-home">
+    <div class="node-logo">◡</div>
+    <div class="node-icon">🏠</div>
+    <span>居家</span>
+  </div>
+
+  <!-- 11 照服員 -->
+<div class="network-node node-care-worker">
+  <div class="node-logo">◡</div>
+  <div class="node-icon">🙋‍♀️</div>
+  <span>照服員</span>
+</div>
+</div>
     </header>
 
     <!-- =======================
@@ -102,7 +227,7 @@
           <span class="eyebrow">OUR IMPACT</span>
           <h2>全台最具社會影響力的數位健康社群</h2>
           <p>
-            從一個健康 App 開始，WaCare 已逐步發展成串連社區、
+            自 2016 年成立以來，WaCare 已逐步發展成串連社區、
             醫療專業、企業 ESG 與政府的數位健康平台，
             讓健康照護突破時間與距離的限制。
           </p>
@@ -131,7 +256,8 @@
         </div>
 
         <div class="impact-note reveal">
-          真正的數位健康，不只是建立一個平台，而是透過科技串連每一位需要照護的人、
+          我們將醫療照護體系的每一員，從線下拉到線上，
+          透過 AI 科技串連每一位需要照護的人、
           每一個家庭、每一位專業工作者，以及每一個社區。
         </div>
       </div>
@@ -150,18 +276,18 @@
 
         <div class="problem-list reveal">
           <div class="problem-item">
-            <b>台灣快速邁向超高齡社會</b>
-            <p>高齡、慢性病與家庭照顧需求持續增加，社區與醫療端都面臨更大的照護壓力。</p>
+            <b>台灣已邁入超高齡社會</b>
+            <p>2025 年，台灣 65 歲以上人口已突破 20%，正式進入超高齡社會；高齡、慢性病與照顧需求同步增加，醫療與社區照護正面臨前所未有的挑戰。</p>
           </div>
 
           <div class="problem-item">
-            <b>健康資源分布不均</b>
-            <p>偏鄉、社區與行動不便者，較難持續取得專業且即時的健康支持。</p>
+            <b>健康資源仍存在明顯落差</b>
+            <p>偏鄉居民、社區長者與行動不便者，往往難以持續取得專業健康支持；身處偏鄉的第一線照顧服務員也不易獲得持續培力與跨專業支援，讓照護品質受限於地理距離。</p>
           </div>
 
           <div class="problem-item">
-            <b>照護需要走進日常生活</b>
-            <p>短暫的門診接觸，難以支撐長期健康管理、行為改變與照顧者支持。</p>
+            <b>慢性病照護，不是一次門診就能完成</b>
+            <p>高血壓、糖尿病等慢性病管理需要長期追蹤、健康教育與生活型態改變，但醫療人力不足、門診時間有限，難以提供持續性的健康管理與照顧支持。</p>
           </div>
         </div>
       </div>

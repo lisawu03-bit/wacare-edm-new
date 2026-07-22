@@ -99,7 +99,7 @@ a{color:inherit}
   position:relative;
   z-index:2;
   display:grid;
-  grid-template-columns:1.25fr .75fr;
+  grid-template-columns:1.05fr .95fr;
   gap:40px;
   align-items:center;
 }
@@ -121,6 +121,10 @@ a{color:inherit}
   max-width:680px;
   color:var(--muted);
   font-size:20px;
+}
+
+.hero .wrap{
+  width:min(calc(100% - 40px),1320px);
 }
 
 /* ==========================
@@ -249,6 +253,237 @@ a{color:inherit}
   stroke-width:2;
   stroke-dasharray:7 8;
   animation:dash 10s linear infinite;
+}
+
+/* ==========================
+   NETWORK ANIMATION
+========================== */
+
+.network-animation{
+  position:relative;
+  width:620px;
+  max-width:none;
+  aspect-ratio:1;
+  margin:90px 0 0;
+  justify-self:center;
+}
+
+/* SVG 線路層 */
+.network-lines{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  z-index:1;
+}
+
+/* 底層固定線 */
+.base-lines line{
+  stroke:rgba(111,108,116,.3);
+  stroke-width:2;
+  stroke-linecap:round;
+}
+
+/* 上層發光電流 */
+.energy-lines line{
+  fill:none;
+  stroke:#f3bd45;
+  stroke-width:4;
+  stroke-linecap:round;
+  stroke-dasharray:7 24;
+  animation:energyFlow 2.5s linear infinite;
+
+  filter:
+    drop-shadow(0 0 3px rgba(243,189,69,.9))
+    drop-shadow(0 0 7px rgba(243,189,69,.45));
+}
+
+/* 讓不同線不要完全同步 */
+.energy-lines line:nth-child(2n){
+  animation-duration:3.1s;
+  animation-direction:reverse;
+}
+
+.energy-lines line:nth-child(3n){
+  animation-delay:-1.2s;
+}
+
+/* 每一個節點 */
+.network-node{
+  position:absolute;
+  z-index:3;
+
+ width:96px;
+ min-height:96px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:14px 10px;
+  border-radius:50%;
+
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(108,67,198,.18);
+
+  box-shadow:
+    0 16px 35px rgba(52,32,95,.15),
+    0 0 0 8px rgba(255,255,255,.42);
+
+  backdrop-filter:blur(8px);
+
+  animation:nodeFloat 4s ease-in-out infinite;
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.network-node:hover{
+  transform:translate(-50%,-50%) scale(1.08);
+  box-shadow:
+    0 22px 45px rgba(52,32,95,.22),
+    0 0 25px rgba(243,154,85,.28);
+}
+
+/* 節點內的小 Logo */
+.node-logo{
+  position:absolute;
+  right:-4px;
+  top:-10px;
+
+  width:38px;
+  height:38px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+  background:#fff;
+  color:var(--orange);
+
+  font-size:27px;
+  font-weight:900;
+  line-height:1;
+
+  box-shadow:0 8px 20px rgba(52,32,95,.14);
+}
+
+/* 目前先用 Emoji 測試 */
+.node-icon{
+  font-size:38px;
+  line-height:1;
+  margin-bottom:8px;
+}
+
+.network-node span{
+  color:var(--purple-dark);
+  font-size:14px;
+  font-weight:800;
+  text-align:center;
+}
+
+/* ==========================
+   RANDOM NETWORK POSITIONS
+========================== */
+
+.node-health-bureau{
+  left:47.5%;
+  top:14%;
+  transform:translate(-50%,-50%);
+  animation-delay:-.4s;
+}
+
+.node-patient{
+  left:27.5%;
+  top:24%;
+  transform:translate(-50%,-50%);
+  animation-delay:-1.3s;
+}
+
+.node-person{
+  left:77.5%;
+  top:21%;
+  transform:translate(-50%,-50%);
+  animation-delay:-2.1s;
+}
+
+.node-hospital{
+  left:56.5%;
+  top:41%;
+  width:108px;
+  min-height:108px;
+  transform:translate(-50%,-50%);
+  animation-delay:-.8s;
+}
+
+.node-clinic{
+  left:37.5%;
+  top:54%;
+  transform:translate(-50%,-50%);
+  animation-delay:-2.6s;
+}
+
+.node-caregiver{
+  left:12.5%;
+  top:45%;
+  transform:translate(-50%,-50%);
+  animation-delay:-1.7s;
+}
+
+.node-medical-staff{
+  left:74%;
+  top:59%;
+  transform:translate(-50%,-50%);
+  animation-delay:-.2s;
+}
+
+.node-ngo{
+  left:88%;
+  top:43%;
+  transform:translate(-50%,-50%);
+  animation-delay:-2.3s;
+}
+
+.node-community{
+  left:52.5%;
+  top:84%;
+  transform:translate(-50%,-50%);
+  animation-delay:-1.1s;
+}
+
+.node-home{
+  left:20%;
+  top:79%;
+  transform:translate(-50%,-50%);
+  animation-delay:-2.8s;
+}
+
+.node-care-worker{
+  left:82%;
+  top:77%;
+  transform:translate(-50%,-50%);
+  animation-delay:-1.9s;
+}
+
+/* 電流向前移動 */
+@keyframes energyFlow{
+  to{
+    stroke-dashoffset:-56;
+  }
+}
+
+/* 節點輕微上下漂浮 */
+@keyframes nodeFloat{
+  0%,
+  100%{
+    margin-top:0;
+  }
+
+  50%{
+    margin-top:-8px;
+  }
 }
 
 /* GENERAL SECTIONS */
@@ -628,3 +863,41 @@ footer{
   .cta{padding-bottom:68px}
 }
 
+.network-animation{
+  position:relative;
+  width:100%;
+  max-width:660px;
+  aspect-ratio:1;
+  margin:90px auto 0;
+}
+
+.network-node{
+  width:88px;
+  min-height:88px;
+  padding:10px 8px;
+}
+
+.node-center{
+  width:112px;
+  min-height:112px;
+}
+
+.node-icon{
+  font-size:29px;
+}
+
+.network-node span{
+  font-size:11px;
+}
+
+.node-logo{
+  width:30px;
+  height:30px;
+  font-size:21px;
+}
+
+.node-logo img{
+  width:24px;
+  height:auto;
+  display:block;
+}
