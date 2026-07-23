@@ -134,7 +134,7 @@ a{color:inherit}
 .brand{
     display:flex;
     align-items:center;
-    gap:22px;
+    gap:0;
     margin-bottom:42px;
 }
 
@@ -350,24 +350,30 @@ a{color:inherit}
 /* 節點內的小 Logo */
 .node-logo{
   position:absolute;
-  right:-4px;
-  top:-10px;
+  right:-6px;
+  top:-12px;
 
-  width:38px;
-  height:38px;
+  width:46px;
+  height:46px;
 
-  display:grid;
-  place-items:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
   border-radius:50%;
-  background:#fff;
-  color:var(--orange);
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);
 
-  font-size:27px;
-  font-weight:900;
-  line-height:1;
+  box-shadow:
+    0 10px 24px rgba(52,32,95,.16),
+    0 0 0 2px rgba(255,255,255,.9);
+}
 
-  box-shadow:0 8px 20px rgba(52,32,95,.14);
+.node-logo img{
+  display:block;
+  width:40px;
+  height:40px;
+  object-fit:contain;
 }
 
 /* 目前先用 Emoji 測試 */
@@ -1409,43 +1415,137 @@ footer{
   .cta{padding-bottom:68px;
 }
 
+/* ==========================
+   MOBILE NETWORK LAYOUT
+========================== */
+
 .network-animation{
   position:relative;
   width:100%;
-  max-width:660px;
-  aspect-ratio:1;
-  margin:90px auto 0;
+  max-width:430px;
+  height:360px;
+  aspect-ratio:auto;
+  margin:42px auto 0;
 }
 
+/* 手機版節點縮小約 18% */
 .network-node{
-  width:88px;
-  min-height:88px;
-  padding:10px 8px;
+  width:72px;
+  min-height:72px;
+  padding:8px 5px;
+
+  box-shadow:
+    0 10px 24px rgba(52,32,95,.13),
+    0 0 0 5px rgba(255,255,255,.38);
 }
 
-.node-center{
-  width:112px;
-  min-height:112px;
+/* 中央醫院稍微保留較大尺寸 */
+.node-hospital{
+  width:82px;
+  min-height:82px;
 }
 
+/* Emoji 縮小 */
 .node-icon{
-  font-size:29px;
+  font-size:23px;
+  margin-bottom:5px;
 }
 
+/* 節點文字縮小 */
 .network-node span{
-  font-size:11px;
+  font-size:10px;
+  line-height:1.2;
 }
 
+/* WaCare 小 Logo */
 .node-logo{
+  right:-4px;
+  top:-8px;
   width:30px;
   height:30px;
-  font-size:21px;
+  padding:4px;
+  font-size:0;
 }
 
 .node-logo img{
-  width:24px;
-  height:auto;
   display:block;
+  width:22px;
+  height:22px;
+  object-fit:contain;
+}
+
+/* 手機版重新配置節點位置 */
+.node-health-bureau{
+  left:48%;
+  top:9%;
+}
+
+.node-patient{
+  left:23%;
+  top:20%;
+}
+
+.node-person{
+  left:78%;
+  top:18%;
+}
+
+.node-hospital{
+  left:51%;
+  top:38%;
+}
+
+.node-caregiver{
+  left:9%;
+  top:43%;
+}
+
+.node-clinic{
+  left:31%;
+  top:54%;
+}
+
+.node-ngo{
+  left:91%;
+  top:42%;
+}
+
+.node-medical-staff{
+  left:74%;
+  top:57%;
+}
+
+.node-home{
+  left:16%;
+  top:78%;
+}
+
+.node-community{
+  left:50%;
+  top:82%;
+}
+
+.node-care-worker{
+  left:84%;
+  top:77%;
+}
+
+/* 手機版降低漂浮幅度，避免再次碰撞 */
+@keyframes nodeFloat{
+  0%,
+  100%{
+    margin-top:0;
+  }
+
+  50%{
+    margin-top:-4px;
+  }
+}
+
+.network-lines{
+  width:100%;
+  height:100%;
+  preserve-aspect-ratio:none;
 }
 
 .problem-layout{
