@@ -917,8 +917,8 @@ section{padding:88px 0}
   fill:#eaf6f2;
 }
 
-/* RESULTS */
-.results{background:#faf8fd}
+/* achievements */
+.achievements{background:#faf8fd}
 
 .result-grid{
   display:grid;
@@ -950,6 +950,176 @@ section{padding:88px 0}
 }
 
 .result-wide{grid-column:1/-1}
+
+/* MEDIA HIGHLIGHTS */
+.media-highlights{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(243,154,85,.10),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 92% 82%,
+      rgba(108,67,198,.10),
+      transparent 28%
+    ),
+    #fffdf9;
+}
+
+.media-card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+
+.media-card{
+  min-width:0;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  color:inherit;
+  text-decoration:none;
+  border-radius:26px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 16px 42px rgba(63,39,94,.09);
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+.media-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(108,67,198,.26);
+  box-shadow:0 26px 60px rgba(63,39,94,.16);
+}
+
+.media-card-image{
+  width:100%;
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+  background:var(--purple-soft);
+}
+
+.media-card-image img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .45s ease;
+}
+
+.media-card:hover .media-card-image img{
+  transform:scale(1.04);
+}
+
+.media-card-content{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  padding:24px 24px 26px;
+}
+
+.media-source{
+  display:block;
+  margin-bottom:10px;
+  color:var(--orange);
+  font-size:12px;
+  line-height:1.5;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.media-card h3{
+  margin:0 0 22px;
+  color:var(--ink);
+  font-size:21px;
+  line-height:1.55;
+  letter-spacing:-.02em;
+}
+
+.media-card-link{
+  display:block;
+  margin-top:auto;
+  color:var(--purple);
+  font-size:14px;
+  font-weight:900;
+}
+
+.media-more{
+  display:grid;
+  grid-template-columns:240px minmax(0,1fr);
+  gap:42px;
+  margin-top:48px;
+  padding:34px;
+  border-radius:28px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 14px 36px rgba(63,39,94,.07);
+}
+
+.media-more-head span{
+  display:block;
+  margin-bottom:6px;
+  color:var(--orange);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+
+.media-more-head h3{
+  margin:0;
+  color:var(--purple-dark);
+  font-size:28px;
+  line-height:1.35;
+}
+
+.media-link-list{
+  display:grid;
+}
+
+.media-link-list a{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:20px;
+  align-items:center;
+  padding:17px 0;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+  transition:
+    color .25s ease,
+    padding-left .25s ease;
+}
+
+.media-link-list a:first-child{
+  padding-top:0;
+}
+
+.media-link-list a:last-child{
+  padding-bottom:0;
+  border-bottom:0;
+}
+
+.media-link-list a:hover{
+  color:var(--purple);
+  padding-left:6px;
+}
+
+.media-link-list a span{
+  font-weight:700;
+  line-height:1.65;
+}
+
+.media-link-list a b{
+  color:var(--orange);
+  font-size:18px;
+}
 
 /* VIDEOS */
 .videos{background:#f3f0f9}
@@ -1118,6 +1288,20 @@ footer{
 .problem-image-card{
   border-radius:20px;
 }
+.media-card-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.media-card:last-child{
+  grid-column:1 / -1;
+  width:calc(50% - 11px);
+  justify-self:center;
+}
+
+.media-more{
+  grid-template-columns:190px minmax(0,1fr);
+  gap:28px;
+}
 
 @media(max-width:700px){
   .wrap{
@@ -1251,4 +1435,33 @@ footer{
 .problem-image-card{
   aspect-ratio:16 / 7;
   border-radius:18px;
+}
+
+.media-card-grid{
+  grid-template-columns:1fr;
+}
+
+.media-card:last-child{
+  grid-column:auto;
+  width:100%;
+}
+
+.media-more{
+  grid-template-columns:1fr;
+  gap:24px;
+  margin-top:34px;
+  padding:25px 22px;
+}
+
+.media-more-head h3{
+  font-size:25px;
+}
+
+.media-link-list a{
+  gap:14px;
+  padding:15px 0;
+}
+
+.media-link-list a span{
+  font-size:15px;
 }
