@@ -35,6 +35,10 @@ a{color:inherit}
   margin:auto;
 }
 
+.nowrap{
+    white-space:nowrap;
+}
+
 .eyebrow{
   display:inline-flex;
   align-items:center;
