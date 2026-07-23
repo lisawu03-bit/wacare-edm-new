@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js-enabled");
+
 /* ==========================================================
    只需要改這個檔案，就能更換影片與職涯連結
    ========================================================== */
@@ -31,32 +33,37 @@ iframe.src =
   frame.appendChild(iframe);
 });
 
-const careerLink = document.getElementById("careerLink");
-
-if (careerLink) {
-  careerLink.href = CAREER_URL;
-}
-
 
 /* 自動顯示當年度 */
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /* 滾動浮現動畫 */
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.13 }
-);
+const revealElements = document.querySelectorAll(".reveal");
 
-document
-  .querySelectorAll(".reveal")
-  .forEach((element) => revealObserver.observe(element));
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: "0px 0px -40px 0px"
+    }
+  );
+
+  revealElements.forEach((element) => {
+    revealObserver.observe(element);
+  });
+} else {
+  revealElements.forEach((element) => {
+    element.classList.add("in");
+  });
+}
 
 /* 數字動畫 */
 const counters = document.querySelectorAll("[data-count]");
