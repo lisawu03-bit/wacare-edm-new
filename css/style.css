@@ -597,7 +597,7 @@ section{padding:88px 0}
 /* 左右雙欄 */
 .problem-layout{
   display:grid;
-  grid-template-columns:minmax(260px,.72fr) minmax(0,1.55fr);
+  grid-template-columns:minmax(380px,.72fr) minmax(0,1.55fr);
   gap:56px;
   align-items:start;
 }
