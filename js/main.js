@@ -5,7 +5,7 @@
 /* 請填入 YouTube 影片 ID，不要貼整串網址 */
 const VIDEO_IDS = {
   googleCheckup: "",
-  humanitarian: ""
+  humanitarian: "d2FtP_3Jvdk"
 };
 
 /* 請把 # 改成 WaCare 招募／104 頁面的完整網址 */
@@ -18,7 +18,11 @@ document.querySelectorAll("[data-video]").forEach((frame) => {
   if (!id) return;
 
   const iframe = document.createElement("iframe");
-  iframe.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0`;
+  const origin = window.location.origin;
+
+iframe.src =
+  `https://www.youtube.com/embed/${id}` +
+  `?rel=0&playsinline=1&origin=${encodeURIComponent(origin)}`;
   iframe.title = "WaCare YouTube video";
   iframe.loading = "lazy";
   iframe.allow =
