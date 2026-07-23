@@ -1430,6 +1430,18 @@ footer{
   .cta{padding-bottom:68px;
 }
 
+.video-frame{
+  aspect-ratio:16 / 10;
+  height:auto;
+}
+
+.video-frame iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
 /* ==========================
    MOBILE NETWORK LAYOUT
 ========================== */
