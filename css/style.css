@@ -73,6 +73,18 @@ a{color:inherit}
   box-shadow:0 14px 30px rgba(108,67,198,.25);
 }
 
+.hero-grid .network-animation{
+    order:2;
+    margin-top:28px;
+}
+
+.hero-grid .btn-primary{
+    order:3;
+    align-self:center;
+
+    margin-top:24px;
+}
+
 /* HERO */
 .hero{
   position:relative;
@@ -1375,6 +1387,16 @@ footer{
   white-space:nowrap;
   font-size:20px;
   letter-spacing:.03em;
+}
+
+.hero-grid{
+    display:flex;
+    flex-direction:column;
+}
+
+.hero-grid > .reveal{
+    display:flex;
+    flex-direction:column;
 }
 
   .wrap{
