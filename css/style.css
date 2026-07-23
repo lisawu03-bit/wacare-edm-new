@@ -1297,7 +1297,7 @@ footer{
 }
 
 .problem-layout{
-  grid-template-columns:minmax(220px,.7fr) minmax(0,1.3fr);
+  grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);
   gap:32px;
 }
 
@@ -1307,7 +1307,8 @@ footer{
 }
 
 .problem-head h2{
-  font-size:clamp(36px,5vw,50px);
+  font-size:clamp(38px,4.8vw,48px);
+  line-height:1.18;
 }
 
 .problem-head p{
@@ -1401,7 +1402,7 @@ footer{
     padding:24px;
   }
 
-  .cta{padding-bottom:68px}
+  .cta{padding-bottom:68px;
 }
 
 .network-animation{
@@ -1455,11 +1456,8 @@ footer{
 
 .problem-head h2{
   margin-bottom:10px;
-  font-size:40px;
-}
-
-.problem-head h2 br{
-  display:none;
+  font-size:38px;
+  line-height:1.2;
 }
 
 .problem-head p{
@@ -1527,4 +1525,5 @@ footer{
 
 .media-link-list a span{
   font-size:15px;
+}
 }
