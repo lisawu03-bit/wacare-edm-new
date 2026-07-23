@@ -1365,6 +1365,18 @@ footer{
 }
 
 @media(max-width:700px){
+
+.brand{
+  flex-wrap:nowrap;
+  gap:0;
+}
+
+.brand-text{
+  white-space:nowrap;
+  font-size:20px;
+  letter-spacing:.03em;
+}
+
   .wrap{
     width:min(calc(100% - 28px),var(--max));
   }
