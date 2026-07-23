@@ -376,11 +376,17 @@ a{color:inherit}
   object-fit:contain;
 }
 
-/* 目前先用 Emoji 測試 */
 .node-icon{
-  font-size:38px;
-  line-height:1;
-  margin-bottom:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.node-icon img{
+    width:34px;
+    height:34px;
+    object-fit:contain;
 }
 
 .network-node span{
@@ -1450,7 +1456,10 @@ footer{
   font-size:23px;
   margin-bottom:5px;
 }
-
+.node-icon img{
+    width:26px;
+    height:26px;
+}
 /* 節點文字縮小 */
 .network-node span{
   font-size:10px;
