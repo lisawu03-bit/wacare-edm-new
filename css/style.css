@@ -1306,11 +1306,10 @@ footer{
   font-size:13px;
   text-align:center;
 }
-
 /* ANIMATION */
 .reveal{
-  opacity:0;
-  transform:translateY(26px);
+  opacity:1;
+  transform:none;
   transition:opacity .7s ease,transform .7s ease;
 }
 
