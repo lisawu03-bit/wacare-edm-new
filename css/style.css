@@ -300,34 +300,40 @@ a{color:inherit}
   z-index:1;
 }
 
-/* 底層固定線 */
+/* 底層固定線：柔和紫灰 */
 .base-lines line{
-  stroke:rgba(111,108,116,.3);
-  stroke-width:2;
+  stroke:rgba(108,67,198,.22);
+  stroke-width:1.6;
   stroke-linecap:round;
 }
+
 
 /* 上層發光電流 */
 .energy-lines line{
   fill:none;
-  stroke:#f3bd45;
-  stroke-width:4;
+  stroke:#f58220;
+
+  stroke-width:3;
   stroke-linecap:round;
   stroke-dasharray:7 24;
-  animation:energyFlow 2.5s linear infinite;
+
+  opacity:.68;
+
+  animation:energyFlow 3s linear infinite;
 
   filter:
-    drop-shadow(0 0 3px rgba(243,189,69,.9))
-    drop-shadow(0 0 7px rgba(243,189,69,.45));
+    drop-shadow(0 0 3px rgba(245,130,32,.38))
+    drop-shadow(0 0 9px rgba(245,130,32,.18));
 }
 
-/* 讓不同線不要完全同步 */
+/* 讓不同線保有自然的速度差與方向差 */
 .energy-lines line:nth-child(2n){
-  animation-duration:3.1s;
+  animation-duration:3.6s;
   animation-direction:reverse;
 }
 
 .energy-lines line:nth-child(3n){
+  animation-duration:3.3s;
   animation-delay:-1.2s;
 }
 
