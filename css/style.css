@@ -1809,3 +1809,41 @@ footer{
     white-space:nowrap;
   }
 }
+
+/* Google Sites 嵌入版：維持 Hero 左右雙欄 */
+@media (min-width:961px) and (max-width:1180px){
+
+  .hero-grid{
+    grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr);
+    gap:20px;
+    align-items:start;
+  }
+
+  .hero-grid > .reveal{
+    min-width:0;
+  }
+
+  .hero h1{
+    width:100%;
+    font-size:clamp(46px,5.35vw,60px);
+    line-height:1.08;
+    letter-spacing:-.06em;
+  }
+
+  .hero-title-first,
+  .hero-title-second{
+    display:block;
+  }
+
+  .hero-title-second{
+    white-space:nowrap;
+  }
+
+  .network-animation{
+    width:390px;
+    max-width:none;
+    margin-top:185px;
+    margin-left:-45px;
+    justify-self:end;
+  }
+}
