@@ -9,7 +9,7 @@ const VIDEO_IDS = {
 };
 
 /* 請把 # 改成 WaCare 招募／104 頁面的完整網址 */
-const CAREER_URL = "#";
+const CAREER_URL = "https://sites.google.com/51donate.com/wacare-2026dm/%E9%A6%96%E9%A0%81/%E6%8E%A2%E7%B4%A2-wacare-%E8%81%B7%E6%B6%AF%E6%A9%9F%E6%9C%83";
 
 /* 載入 YouTube 影片 */
 document.querySelectorAll("[data-video]").forEach((frame) => {
