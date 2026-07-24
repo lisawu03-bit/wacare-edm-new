@@ -124,7 +124,7 @@ a{color:inherit}
 .hero-grid{
   position:relative;
   z-index:2;
-  Display:block;
+  display:block;
 }
 
 .hero h1{
@@ -150,9 +150,6 @@ a{color:inherit}
   width:min(calc(100% - 40px),1320px);
 }
 
-.hero-mobile-btn{
-  display:none;
-}
 
 /* ==========================
    BRAND
@@ -209,78 +206,6 @@ a{color:inherit}
   font-size:15px;
 }
 
-/* ECOSYSTEM */
-.ecosystem{
-  position:relative;
-  aspect-ratio:1;
-  max-width:500px;
-  margin:110px auto 0;
-}
-
-.eco-core,
-.eco-node{
-  position:absolute;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  border-radius:999px;
-  background:rgba(255,255,255,.84);
-  border:1px solid rgba(108,67,198,.18);
-  box-shadow:var(--shadow);
-  backdrop-filter:blur(10px);
-  font-weight:800;
-}
-
-.eco-core{
-  width:160px;
-  height:160px;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-  color:#fff;
-  background:linear-gradient(145deg,var(--purple),var(--purple-dark));
-  border:7px solid rgba(255,255,255,.8);
-  z-index:3;
-}
-
-.eco-core strong{font-size:27px}
-
-.eco-core small{
-  display:block;
-  font-size:12px;
-  opacity:.8;
-}
-
-.eco-node{
-  width:112px;
-  height:48px;
-  font-size:13px;
-  z-index:2;
-}
-
-.n1{left:50%;top:2%;transform:translateX(-50%)}
-.n2{right:5%;top:15%}
-.n3{right:-2%;top:43%}
-.n4{right:7%;bottom:12%}
-.n5{left:50%;bottom:0;transform:translateX(-50%)}
-.n6{left:3%;bottom:16%}
-.n7{left:-2%;top:40%}
-.n8{left:7%;top:13%}
-
-.eco-lines{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-}
-
-.eco-lines line{
-  stroke:rgba(108,67,198,.25);
-  stroke-width:2;
-  stroke-dasharray:7 8;
-  animation:dash 10s linear infinite;
-}
 
 /* ==========================
    NETWORK ANIMATION
@@ -539,6 +464,16 @@ a{color:inherit}
 
 /* GENERAL SECTIONS */
 section{padding:88px 0}
+
+.problem,
+.services,
+.achievements,
+.media-highlights,
+.videos,
+.cta{
+  content-visibility:auto;
+  contain-intrinsic-size:auto 800px;
+}
 
 .section-head{
   max-width:800px;
@@ -1423,12 +1358,6 @@ footer{
     flex-direction:column;
 }
 
-.hero-mobile-btn{
-  display:inline-flex;
-  width:220px;
-  margin:28px auto 0;
-  justify-self:center;
-}
 
   .wrap{
     width:min(calc(100% - 28px),var(--max));
