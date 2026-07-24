@@ -318,28 +318,28 @@ a{color:inherit}
   fill:none;
   stroke:#f58220;
 
-  stroke-width:3;
+  stroke-width:2.5;
   stroke-linecap:round;
-  stroke-dasharray:7 24;
+  stroke-dasharray:7 28;
 
-  opacity:.5;
+  opacity:.42;
 
-  animation:energyFlow 3s linear infinite;
+  animation:energyFlow 4.8s linear infinite;
 
   filter:
-    drop-shadow(0 0 3px rgba(245,130,32,.38))
-    drop-shadow(0 0 9px rgba(245,130,32,.18));
+    drop-shadow(0 0 2px rgba(245,130,32,.22));
 }
 
 /* 讓不同線保有自然的速度差與方向差 */
 .energy-lines line:nth-child(2n){
-  animation-duration:3.6s;
+  animation-duration:5.6s;
   animation-direction:reverse;
 }
 
 .energy-lines line:nth-child(3n){
-  animation-duration:3.3s;
-  animation-delay:-1.2s;
+  animation:none;
+  opacity:.18;
+  filter:none;
 }
 
 /* 每一個節點 */
@@ -358,26 +358,24 @@ a{color:inherit}
   padding:14px 10px;
   border-radius:50%;
 
-  background:rgba(255,255,255,.92);
+  background:rgba(255,255,255,.96);
   border:1px solid rgba(108,67,198,.18);
 
   box-shadow:
-    0 16px 35px rgba(52,32,95,.15),
-    0 0 0 8px rgba(255,255,255,.42);
+  0 12px 26px rgba(52,32,95,.12),
+  0 0 0 6px rgba(255,255,255,.38);
 
-  backdrop-filter:blur(8px);
-
-  animation:nodeFloat 4s ease-in-out infinite;
+  animation:nodeFloat 7s ease-in-out infinite;
   transition:
     transform .3s ease,
     box-shadow .3s ease;
 }
 
 .network-node:hover{
-  transform:translate(-50%,-50%) scale(1.08);
+  transform:translate(-50%,-50%) scale(1.05);
   box-shadow:
-    0 22px 45px rgba(52,32,95,.22),
-    0 0 25px rgba(243,154,85,.28);
+    0 16px 32px rgba(52,32,95,.17),
+    0 0 14px rgba(243,154,85,.18);
 }
 
 /* 節點內的小 Logo */
@@ -394,11 +392,10 @@ a{color:inherit}
   justify-content:center;
 
   border-radius:50%;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(10px);
+  background:rgba(255,255,255,.98);
 
   box-shadow:
-    0 10px 24px rgba(52,32,95,.16),
+    0 6px 16px rgba(52,32,95,.12),
     0 0 0 2px rgba(255,255,255,.9);
 }
 
@@ -536,7 +533,7 @@ a{color:inherit}
   }
 
   50%{
-    margin-top:-8px;
+    margin-top:-5px;
   }
 }
 
@@ -701,8 +698,8 @@ section{padding:88px 0}
 }
 
 .problem-image-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 25px 60px rgba(63,39,94,.18);
+  transform:translateY(-3px);
+  box-shadow:0 18px 38px rgba(63,39,94,.14);
 }
 
 .problem-image-card img{
@@ -775,9 +772,9 @@ section{padding:88px 0}
 }
 
 .service-card:hover{
-  transform:translateY(-7px);
-  border-color:rgba(108,67,198,.24);
-  box-shadow:0 24px 55px rgba(63,39,94,.15);
+  transform:translateY(-4px);
+  border-color:rgba(108,67,198,.22);
+  box-shadow:0 18px 40px rgba(63,39,94,.12);
 }
 
 .service-visual{
@@ -1016,8 +1013,8 @@ section{padding:88px 0}
 }
 
 .result-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 24px 55px rgba(63,39,94,.15);
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(63,39,94,.12);
 }
 
 .result-card small{
@@ -1080,9 +1077,9 @@ section{padding:88px 0}
 }
 
 .media-card:hover{
-  transform:translateY(-7px);
-  border-color:rgba(108,67,198,.26);
-  box-shadow:0 26px 60px rgba(63,39,94,.16);
+  transform:translateY(-4px);
+  border-color:rgba(108,67,198,.22);
+  box-shadow:0 18px 42px rgba(63,39,94,.13);
 }
 
 .media-card-image{
@@ -1815,3 +1812,22 @@ footer{
   }
 }
 
+@media (prefers-reduced-motion: reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  .network-node,
+  .energy-lines line,
+  .eco-lines line{
+    animation:none !important;
+  }
+
+  .reveal,
+  .js-enabled .reveal,
+  .js-enabled .reveal.in{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+}
